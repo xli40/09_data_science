@@ -1,3 +1,2 @@
 # 09_data_science
-softdev unit 7 data science project
-members: samuel li
+softdev unit 7 data science project by samuel li
