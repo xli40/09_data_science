@@ -12,6 +12,9 @@ df_data = df_data.dropna()
 assert df_data.isnull().sum().sum() == 0, "null found"
 
 # 4: Convert the columns that store date and time from string (object) to data and time respectively.
+df_data['Date_of_Journey'] = pd.to_datetime(df_data['Date_of_Journey'], format='%d/%m/%Y')
+df_data['Dep_Time'] = pd.to_datetime(df_data['Dep_Time']).dt.time
+df_data['Arrival_Time'] = pd.to_datetime(df_data['Arrival_Time']).dt.time
 
 # 5: Add the following columns to df_data: 'Journey_day', 'Journey_month', 'Journey_year', 'Dep_Time_hour', 'Dep_Time_minute', 'Arrival_Time_hour', 'Arrival_Time_minute' and fill it with the corresponding data.
 
