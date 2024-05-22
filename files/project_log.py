@@ -6,9 +6,10 @@ import numpy as np
 df_data = pd.read_excel('airlines.xlsx')
 
 # 2: Clean the data in df_data. This means remove all rows that have at least one empty value.
-
+df_data = df_data.dropna()
 
 # 3: Write a line of code to double check you do not have any null values in df_data.
+assert df_data.isnull().sum().sum() == 0, "null found"
 
 # 4: Convert the columns that store date and time from string (object) to data and time respectively.
 
